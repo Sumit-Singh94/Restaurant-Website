@@ -1,0 +1,107 @@
+ 
+.img1{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+    border-radius: 50%;
+}
+.img2{
+    border-radius: 10px;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin-right: 10px;
+    overflow: hidden;
+    margin-top: -300px;
+    float: right;
+}
+.img3{
+    border-radius: 10px;
+    position: relative;
+    width: 550px;
+    margin-left: 50px;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 50px;
+    float: left;
+}
+.samosah1{
+    margin-top: 100px;
+   
+    transition:  1s ease-in-out;
+}
+.samosah1:hover{
+color:goldenrod;
+
+
+}
+.samosah3{
+    margin-top: 50px;
+}
+.logo{
+   border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.nav-link.active {
+   
+   font-size: 30px;
+   margin: 0px 10px;
+   float: none;
+   transition:  1s ease 1s;
+ 
+}
+.btn{
+    font-size: 20px;
+    width: 200px;
+    border-radius: 50px;
+    height: 70px;
+    margin-top:150px;
+    margin-left: 100px;
+    background-color: black;
+}
+
+.nav-link.active:hover{
+
+    text-transform: uppercase ; 
+    margin: 0px 40px;
+}
+
+.fa-phone{
+    font-size: 25px;
+    width: 20px;
+    height: auto;
+    margin: 0px 10px;
+}
+.number{
+    font-weight: 200px;
+    font-size: 20px;
+}
+.text1{
+   margin-left: 50px;
+   margin-top: 10px;
+   font-size: 60px;
+   
+}
+.text2{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+ .text3{
+    position: relative;
+    margin-top: 400px;
+    margin-right: 330px;
+
+ } 
+
+ 
+ .p1{
+    position: relative;
+   margin-top: 5vh;
+   font-size: 30px;
+   overflow: hidden;
+   
+}
