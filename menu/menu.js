@@ -34,7 +34,7 @@ newul.innerHTML = `${cart.map(item => `<li>${item.cardtitle}-${item.cardtext}-${
 
    })
 });
-
+ 
 
 // cartbutton.addEventListener('click',()=>{
 //     console.log(`logo:${product.logo}`);
