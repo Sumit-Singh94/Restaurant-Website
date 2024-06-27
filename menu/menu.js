@@ -1,28 +1,55 @@
+
 cart=[]
-cartbtn=document.querySelectorAll('#cartbtn')
 
-cartbtn.forEach(button => {
-    button.addEventListener('click',function(e){
-        e.preventDefault()
+offcanvasbody=document.querySelector(".offcanvas-body")
 
-       card= button.parentElement.parentElement
 
-       let product={
-        productTitle:card.querySelectorAll('.card-title').innerHTML,
-        productText:card.querySelectorAll('.card-text').innerText,
-        productPrice:parseFloat(card.querySelectorAll('.itemprice').innerText),
-        quantity: 1
-    
-       }
-       cart.push(product)
+var logo=document.querySelector(".card-img-top").textContent;
+var cardtitle=document.querySelector(".card-title").textContent;
+var cardtext=document.querySelector('.card-text').textContent;
+var itemprice=document.querySelector('.itemprice').innerHTML;
 
-       canvasbody=document.querySelector('.offcanvas-body')
 
-       cartItem=document.createElement('div');
-       cartItem.textContent=`${product.productTitle,product.productText,product.productPrice*product.quantity}`
 
-       canvasbody.appendChild(cartItem)
-       console.log(cart);
+product={
+    logo: logo,
+    cardtitle: cardtitle,
+    cardtext:cardtext,
+    itemprice:itemprice,
+};
+cart.push(product);
 
-    })
+cartbutton=document.querySelectorAll("#cartbtn")
+
+cartbutton.forEach(element => {
+   element.addEventListener('click',()=>{
+
+    console.log(`logo:${product.logo}`);
+        console.log(`cardtitle:${product.cardtitle}`);
+        console.log(`cardtext:${product.cardtext}`);
+        console.log(`price:${product.itemprice}`);
+    newul=document.createElement('ul')
+
+newul.innerHTML = `${cart.map(item => `<li>${item.cardtitle}-${item.cardtext}-${item.itemprice}</li>`).join('')}`;
+
+   })
 });
+
+
+// cartbutton.addEventListener('click',()=>{
+//     console.log(`logo:${product.logo}`);
+//     console.log(`cardtitle:${product.cardtitle}`);
+//     console.log(`cardtext:${product.cardtext}`);
+//     console.log(`price:${product.itemprice}`);
+// })
+
+
+
+
+newul=document.createElement('ul')
+
+// newul.innerHTML = `${cart.map(item => `<li>${item.cardtitle}-${item.cardtext}-${item.itemprice}</li>`).join('')}`;
+
+
+
+offcanvasbody.appendChild(newul);
