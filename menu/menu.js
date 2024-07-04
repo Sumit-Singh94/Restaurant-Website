@@ -4,52 +4,64 @@ cart=[]
 offcanvasbody=document.querySelector(".offcanvas-body")
 
 
-var logo=document.querySelector(".card-img-top").textContent;
-var cardtitle=document.querySelector(".card-title").textContent;
-var cardtext=document.querySelector('.card-text').textContent;
-var itemprice=document.querySelector('.itemprice').innerHTML;
+// var logo=element.closest(".card").querySelectorAll(".card-img-top").innerHTML;
+// var cardtitle=element.closest(".card").querySelectorAll(".card-title").textContent;
+// var cardtext=element.closest(".card").querySelectorAll('.card-text').textContent;
+// var itemprice=element.closest(".card").querySelectorAll('.itemprice').textContent;
 
 
 
-product={
-    logo: logo,
-    cardtitle: cardtitle,
-    cardtext:cardtext,
-    itemprice:itemprice,
-};
-cart.push(product);
+ var cartbutton=document.querySelectorAll("#cartbtn")
 
-cartbutton=document.querySelectorAll("#cartbtn")
 
-cartbutton.forEach(element => {
+
+var x=0;  //defining the valueof item initially 0
+counter=document.getElementById('counter').innerText=x;
+
+
+cartbutton.forEach((element,index)=> {
    element.addEventListener('click',()=>{
+       
+      var logo=element.closest(".card").querySelector(".card-img-top").innerHTML;
+      var cardtitle=element.closest(".card").querySelector(".card-title").textContent;
+      var cardtext=element.closest(".card").querySelector('.card-text').textContent;
+      var itemprice=element.closest(".card").querySelector('.itemprice').textContent;
+      
+   
+        var product={
+         logo: logo,
+         cardtitle: cardtitle,
+         cardtext:cardtext,
+         itemprice:itemprice,
+     };
 
-    console.log(`logo:${product.logo}`);
-        console.log(`cardtitle:${product.cardtitle}`);
-        console.log(`cardtext:${product.cardtext}`);
-        console.log(`price:${product.itemprice}`);
-    newul=document.createElement('ul')
+     console.log(`logo:${product.logo}`);
+     console.log(`cardtitle:${product.cardtitle}`);
+     console.log(`cardtext:${product.cardtext}`);
+      console.log(`price:${product.itemprice}`);
 
-newul.innerHTML = `${cart.map(item => `<li>${item.cardtitle}-${item.cardtext}-${item.itemprice}</li>`).join('')}`;
+     cart.push(product);
+       
+
+        newul=document.createElement('ul')
+
+newul.innerHTML=`${product.logo}${product.cardtitle}<span class="material-symbols-rounded">delete</span><br>${product.cardtext}<br>${product.itemprice}`
+
+x=++x // incrementing the initial value when button is clicked 
+document.getElementById("counter").innerText=x;
+
+offcanvasbody.appendChild(newul);
 
    })
 });
- 
-
-// cartbutton.addEventListener('click',()=>{
-//     console.log(`logo:${product.logo}`);
-//     console.log(`cardtitle:${product.cardtitle}`);
-//     console.log(`cardtext:${product.cardtext}`);
-//     console.log(`price:${product.itemprice}`);
-// })
 
 
 
 
-newul=document.createElement('ul')
-
-// newul.innerHTML = `${cart.map(item => `<li>${item.cardtitle}-${item.cardtext}-${item.itemprice}</li>`).join('')}`;
 
 
 
-offcanvasbody.appendChild(newul);
+
+
+
+
