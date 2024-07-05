@@ -13,10 +13,11 @@ offcanvasbody=document.querySelector(".offcanvas-body")
 
  var cartbutton=document.querySelectorAll("#cartbtn")
 
-
-
 var x=0;  //defining the valueof item initially 0
 counter=document.getElementById('counter').innerText=x;
+
+var y="Add item "
+subcounter=document.getElementById('subcounter').innerText=y;
 
 
 cartbutton.forEach((element,index)=> {
@@ -42,15 +43,20 @@ cartbutton.forEach((element,index)=> {
 
      cart.push(product);
        
-
         newul=document.createElement('ul')
+        newul.className="productul";
 
 newul.innerHTML=`${product.logo}${product.cardtitle}<span class="material-symbols-rounded">delete</span><br>${product.cardtext}<br>${product.itemprice}`
+
+
+offcanvasbody.appendChild(newul);
+
+subcounter+=parseFloat(product.itemprice);
+document.getElementById('subcounter').innerText=subcounter;
 
 x=++x // incrementing the initial value when button is clicked 
 document.getElementById("counter").innerText=x;
 
-offcanvasbody.appendChild(newul);
 
    })
 });
