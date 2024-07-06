@@ -26,14 +26,14 @@ cartbutton.forEach((element,index)=> {
       var logo=element.closest(".card").querySelector(".card-img-top").innerHTML;
       var cardtitle=element.closest(".card").querySelector(".card-title").textContent;
       var cardtext=element.closest(".card").querySelector('.card-text').textContent;
-      var itemprice=element.closest(".card").querySelector('.itemprice').textContent;
+      var itemprice=parseFloat(element.closest(".card").querySelector('.itemprice').textContent);
       
    
         var product={
          logo: logo,
          cardtitle: cardtitle,
          cardtext:cardtext,
-         itemprice:itemprice,
+         itemprice:parseFloat(itemprice),
      };
 
      console.log(`logo:${product.logo}`);
@@ -46,13 +46,20 @@ cartbutton.forEach((element,index)=> {
         newul=document.createElement('ul')
         newul.className="productul";
 
-newul.innerHTML=`${product.logo}${product.cardtitle}<span class="material-symbols-rounded">delete</span><br>${product.cardtext}<br>${product.itemprice}`
+newul.innerHTML=`${product.logo}${product.cardtitle}<span class="material-symbols-rounded">delete</span><br>${product.cardtext}<br>${product.itemprice.toFixed(2)}`
 
 
 offcanvasbody.appendChild(newul);
 
-subcounter+=parseFloat(product.itemprice);
-document.getElementById('subcounter').innerText=subcounter;
+
+totalprice=cart.map(item=>
+   item.itemprice).reduce((acc,price)=>{
+       return acc+price
+   },0)
+
+document.getElementById('subcounter').innerText=totalprice;
+
+
 
 x=++x // incrementing the initial value when button is clicked 
 document.getElementById("counter").innerText=x;
@@ -60,9 +67,6 @@ document.getElementById("counter").innerText=x;
 
    })
 });
-
-
-
 
 
 
