@@ -1,9 +1,9 @@
  
 .img1{
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin-left: 200px;
+    width: 230px;
+    height: 210px;
+    margin-left: 400px;
     border-radius: 50%;
 }
 .img2{
@@ -29,9 +29,11 @@
     float: left;
 }
 .samosah1{
+  color: black;
     margin-top: 100px;
     margin-left:-50px;
     transition:  1s ease-in-out;
+   
 }
 .samosah1:hover{
 color:goldenrod;
@@ -57,7 +59,7 @@ color:goldenrod;
    transition:  1s ease 1s;
  
 }
-.btn{
+/* .btn{
     font-size: 20px;
     width: 200px;
     border-radius: 50px;
@@ -65,7 +67,75 @@ color:goldenrod;
     margin-top:70px;
     margin-left: 100px;
     background-color: black;
+} */
+
+button {
+  position: absolute;
+  display: flex;
+  width: 200px;
+  border-radius: 50px;
+  height: 70px;
+  margin-top:70px;
+  margin-left: 100px;
+  justify-content: start;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
 }
+
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 .nav-link.active:hover{
 
