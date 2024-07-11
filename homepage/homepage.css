@@ -3,138 +3,59 @@
 
 
 .container-fluid{
-    padding: 0px;
-    background-color: white;
-    margin: 0px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white; 
+    
+}
+.carousel-inner,.carousel-item {
+    height: 100vh; 
+       
 }
 
-.foodpic{
-    width: 100%vw;
-    height:750px;
-    object-fit:cover;
-    filter: brightness(90%);
-}
 .slideh1{
+   display: flex;
+   flex-wrap: wrap;
+    flex-direction: column;
     position:relative;
-    bottom: 310px;
+    text-align: center;
+    bottom: 40vh;
     font-weight: 1000;
-    font-size: 80px;
+    font-size: 10vh;
     font-family: 'Font Name',Baskervville;
 }
 .slideh2{
     position: relative; 
-    bottom: 330px;
+    bottom: 39vh;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 5vh;
     font-family: 'Font Name',baskervville;
 }
 .logo1{
-    position: fixed;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-top: 20px;
+    float: left;
+    width: 20vw;
+    /* margin-top: -20vh; */
     z-index: 2;
-    width: 200px;
-    height: 100px;
+    position: fixed;
+
 }
 .arrow{
     position: absolute;
     cursor: pointer;
-    font-size: 50px;
+    font-size: 4vw;
     font-weight: 500;
     z-index: 2;
     color: white;
-    margin-left: 600px;
-    margin-top: -90px;
+    margin-left: 45vw;
+    margin-top: -15vh;
     
 }
 .arrow:hover{
     transform: translateY(7px);
 
 }
-.foodpic2{
-    position: absolute;
-    width: 100vw;
-    height:200vh;
-    overflow: hidden;
-    object-fit: cover;
-    filter: brightness(70%);
-}
-.foodpic2h1{
-    font-size: 8vw;
-    line-height: 1.4;
-    position: absolute;
-    color:white;
-    z-index: 2;
-    margin-left: 400px;
-    margin-top: 100px;
-    font-family: 'Font Name',festive;
-}
-.foodpic2h12{
-    font-size: 6vw;
-    line-height: 2;
-    position: absolute;
-    color: white;
-    z-index: 2;
-    margin-left: 400px;
-    margin-top: 180px;
-    font-family: 'Font Name',festive;
-}
-/* .box1::before{
-    opacity: 0.5;
-    content: "";
-    position: absolute;
-} */
-.box1{
-    background-color: rgb(247, 19, 19);
-    opacity: 0.7;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 560px;
-    height: 800px;
-    filter: brightness(70%);
-    position: absolute;
-     margin-top: 400px;
-    margin-left: 50px; 
-   
-}
-.giftLogo{
-    position: relative;
-    width: 8vw;
-    height: 14vh;
-    opacity: 1;
-    margin-top: 600px; 
-    margin-left: 280px;
-    display:flex;
-    
-}
-.handShake{
-    position: relative;
-    width: 8vw;
-    height: 14vh;
-    opacity: 1;
-    margin-top: 70vh; 
-    margin-left: 280px;
-    display:flex;
-}
- .box1h1{
-    position: relative;
-    z-index: 2;
-    color: white;    
-    opacity: 1;
-    font-family: 'Font Name',festive;
-    text-align: center;
-    margin-top: 3vh;
-    font-size: 6vw;  
-}
-.box1h12{
-    position: relative;
-    z-index: 2;
-    color: white;    
-    opacity: 1;
-    font-family: 'Font Name',festive;
-    text-align: center;
-    margin-top: 1vh;
-    font-size: 6vw;  
-} 
+
