@@ -298,12 +298,35 @@
           color: red;
          
         }
-        .containbutton{
+        .btn{
           display: none!important;
         }
-
-    
-        
+        .btn1{
+          padding-right: 5rem!important;
+          padding-bottom: 3rem!important;
+          width: 100%;
+        }
+        .main3{
+          margin-top: 1dvh!important;
+        }
+        .textcontainer3{
+          padding: 1rem!important;
+          margin-top: 2rem!important;
+        }
+       .tcp3{
+        margin-top: 1rem!important;
+       }
+       .contactcardtext{
+        width: 100% !important;
+       }
+       .contactcardtexth1{
+        width: 100% !important;
+       }
+       .contactcardtexth2{
+        width: 100% !important;
+        overflow: hidden;
+       }
+     
     }
     
   }
@@ -447,116 +470,65 @@
     font-size:clamp(1rem,1.5vw,3rem);
   }
   
-  .wrapper {
-    margin-top: 5dvh;
+  .button-icon {
+    margin-top: 6dvh;
+    border: 2px solid black;
     display: flex;
-    gap: 10px;
-    font-family: monospace;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
   }
   
-  .wrapper > div {
-    text-align: center;
+  .icon {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
   }
   
-  .wrapper > div + div {
-    border-inline-start: 1px solid #d6cfcf;
-    padding-inline-start: 15px;
+  .icon svg {
+    width: 25px;
+    height: 25px;
   }
   
-  .wrapper > div > p {
-    margin-top: 15px;
-    max-width: 200px;
+  .cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
   }
   
-  .wrapper a {
-    display: inline-flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+  .button-icon:hover {
+    border-color: red;
+  }
+  
+  .button-icon:hover .cube {
+    transform: rotateX(90deg);
+  }
+  
+  .side {
+    position: absolute;
+    height: 45px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
     justify-content: center;
     align-items: center;
-    background-color: #191919;
-    color: #d5ad72;
-    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
   }
   
-  .data-tooltip::before,
-  .data-tooltip::after {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
+  .top {
+    background: red;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
   }
   
-  .data-tooltip::before {
-    content: attr(data-tooltip-content);
-    width: fit-content;
-    font-size: small;
-    font-weight: 600;
-    background-color: inherit;
-    padding: 3px 10px;
-    border-radius: 4px;
-    bottom: calc(100% + 5px);
+  .front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
   }
   
-  .data-tooltip::after {
-    content: "";
-    border-top: 5px solid #191919;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    bottom: calc(100% + 1px);
-  }
-  
-  .data-tooltip:hover::before,
-  .data-tooltip:hover::after {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .span-tooltip > i {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .span-tooltip > span {
-    position: absolute;
-    width: fit-content;
-    font-size: small;
-    font-weight: 600;
-    background-color: inherit;
-    padding: 3px 10px;
-    border-radius: 4px;
-    bottom: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-  
-  .span-tooltip > span::before {
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
-    border-radius: 3px;
-    background-color: inherit;
-    transform: rotate(45deg);
-    top: calc(100% - 6px);
-    left: 40%;
-  }
-  
-  .span-tooltip > i:hover + span {
-    visibility: visible;
-    opacity: 1;
-    bottom: calc(100% + 6px);
-  }
-  
-
-
   .textcontainer{
     display: flex;
     justify-content: center;
@@ -575,6 +547,20 @@
     flex-direction: column;
     
   }
+  .main3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   .mainpic2{  
     border-radius: 10px;
     display: flex;
@@ -583,9 +569,127 @@
   }
   .tcp{
     text-wrap:wrap;
-    text-align: start;
+    line-height:2rem;
+    text-align: start;  
     font-size: clamp(1rem,1rem,1.5rem);
     display: flex;
     
   }
-  
+  .btn {
+    margin-top: 10dvh;
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    width: 30dvw;
+    font-size: 16px;
+    font-weight: 700;
+    color: red;
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+   }
+   
+   .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ec0000;
+    border: 2px solid rgb(0, 0, 0);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+   }
+   
+   .btn:hover::before {
+    transform: translateX(0);
+   }
+
+   .main3{
+    margin-top: 20dvh;
+    padding: 1rem;
+   }
+   .textcontainer3{
+    padding: 3rem;
+    margin-top: -15dvh;
+   }
+   .mainpic3{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   }
+   .tcp3{
+    text-wrap:wrap;
+    text-align: start;  
+    font-size: clamp(1rem,1rem,1.5rem);
+    
+   }
+   .btn1 {
+    margin-top: 1rem;
+    display: flex;
+    padding:1rem 0rem 1rem 9rem;
+    width: 100%;
+    height: 3.5rem;
+    font-size:clamp(0.8rem,1.5vw,3rem);
+    font-weight: 500;
+    border-radius: 5px;
+    color:white;
+    background-color: #000000;
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 1;
+    font-family:'Times New Roman', Times, serif;
+    
+   }
+   .btn1:hover{
+    background-color: #202020;
+    
+   }
+   .contactcard {
+    margin-top: 10dvh;
+    width: 80dvw;
+    height: 254px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+  }
+  .contactcardtext{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5rem 0rem 0rem 0rem;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .contactcardtexth1{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: clamp(1rem,3dvw,8rem);
+  }
+  .contactcardtexth2{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: clamp(0.8rem,2dvw,8rem);
+  }
