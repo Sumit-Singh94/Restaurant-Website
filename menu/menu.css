@@ -14,7 +14,7 @@
     margin-top: 50px;
     margin-bottom: -50px;
 }
-
+  
 
 /* newbutton */
 .button {
@@ -88,10 +88,15 @@
   'opsz' 24
 } */
 
+.deletebtn{
+  margin-left: 1rem;
+  width: 5rem;
+  border-radius: 5px;
+  background-color: rgb(194, 194, 194);
+}
+
 .material-symbols-rounded{
   position: relative;
-  margin-left: 50px;
-  margin-top: px!important;
   cursor:pointer;
   
 }

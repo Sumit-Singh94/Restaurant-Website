@@ -13,60 +13,76 @@ offcanvasbody=document.querySelector(".offcanvas-body")
 
  var cartbutton=document.querySelectorAll("#cartbtn")
 
-var x=0;  //defining the valueof item initially 0
-counter=document.getElementById('counter').innerText=x;
+let x=0;  //defining the valueof item initially 0
+document.getElementById('counter').innerText=x;
 
-var y="Add item "
-subcounter=document.getElementById('subcounter').innerText=y;
+let y="Add item"
+document.getElementById('subtotal').innerText=y;
 
 
-cartbutton.forEach((element,index)=> {
+cartbutton.forEach((element)=> {
    element.addEventListener('click',()=>{
        
-      var logo=element.closest(".card").querySelector(".card-img-top").innerHTML;
-      var cardtitle=element.closest(".card").querySelector(".card-title").textContent;
-      var cardtext=element.closest(".card").querySelector('.card-text').textContent;
-      var itemprice=parseFloat(element.closest(".card").querySelector('.itemprice').textContent);
+      const logo=element.closest(".card").querySelector(".card-img-top").innerHTML;
+      const cardtitle=element.closest('.card').querySelector('.card-title').textContent;
+      const cardtext=element.closest(".card").querySelector('.card-text').textContent;
+      const itemprice=parseFloat(element.closest(".card").querySelector('.itemprice').textContent);
       
    
-        var product={
+        const product={
          logo: logo,
          cardtitle: cardtitle,
          cardtext:cardtext,
          itemprice:parseFloat(itemprice),
      };
-
-     console.log(`logo:${product.logo}`);
-     console.log(`cardtitle:${product.cardtitle}`);
-     console.log(`cardtext:${product.cardtext}`);
-      console.log(`price:${product.itemprice}`);
-
      cart.push(product);
        
-        newul=document.createElement('ul')
-        newul.className="productul";
+     let newul = document.createElement("ul")
+     newul.className = "productul";
 
-newul.innerHTML=`${product.logo}${product.cardtitle}<span class="material-symbols-rounded">delete</span><br>${product.cardtext}<br>${product.itemprice.toFixed(2)}`
+     let deletebtn = document.createElement("button");
+     deletebtn.className = "deletebtn";
+     deletebtn.innerHTML = "<span class='material-symbols-rounded'>delete</span>";
 
+     newul.innerHTML = `${product.logo}${product.cardtitle}<br>${product.cardtext}<br>${product.itemprice.toFixed(2)}`;
+     newul.appendChild(deletebtn);
 
-offcanvasbody.appendChild(newul);
-
+     offcanvasbody.appendChild(newul);
 
 totalprice=cart.map(item=>
    item.itemprice).reduce((acc,price)=>{
        return acc+price
    },0)
 
-document.getElementById('subcounter').innerText=totalprice;
+document.querySelector('#subtotal').innerText=totalprice.toFixed(2);
 
-
-
-x=++x // incrementing the initial value when button is clicked 
+x++ // incrementing the initial value when button is clicked 
 document.getElementById("counter").innerText=x;
 
+deletebtn.addEventListener('click',()=>{
 
-   })
+  const card=deletebtn.closest('.productul');
+   if(card){
+      card.remove();
+      x=x-1;
+      document.getElementById('counter').innerText=x;
+
+      newindex=cart.findIndex(item=>item.itemprice==product.itemprice);
+      if(newindex!=-1){
+         cart.splice(newindex,1)
+      }
+     const updatedTotal=cart.map((item)=>item.itemprice).reduce((acc,itemprice)=>acc+itemprice,0)
+      document.getElementById("subtotal").innerText=updatedTotal.toFixed(2);
+   }
+
+})
+
+
+   }) 
 });
+
+
+
 
 
 
