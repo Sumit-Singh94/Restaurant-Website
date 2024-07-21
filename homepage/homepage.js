@@ -3,15 +3,18 @@ loginForm.style.display="none";
 
 
 let formTime=setTimeout(()=>{
-   loginForm.style.display="block";
-   console.log("diplayed!");
-},5000);
+   loginForm.style.display="inline-block"
+   console.log("LoginFormDisplayed!!");
+},7000);
 
-setTimeout(()=>{
+cancel=document.getElementById('cancel')
+
+cancel.addEventListener('click',event=>{
    loginForm.style.display="none";
    clearTimeout(formTime)
+   console.log("LoginFormRemoved!!");
+})
 
-},10000)
 
 arrow=document.querySelector(".arrow")
 arrow.addEventListener('click',()=>{
